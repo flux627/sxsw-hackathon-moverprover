@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d531bf6-15d7-4322-a31c-c8ae1033ed71" name="Default Changelist" comment="" />
+    <list default="true" id="9d531bf6-15d7-4322-a31c-c8ae1033ed71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eosio_docker/contracts/mvpregister/mvpregister.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/eosio_docker/contracts/mvpregister/mvpregister.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eosio_docker/scripts/create_accounts.sh" beforeDir="false" afterPath="$PROJECT_DIR$/eosio_docker/scripts/create_accounts.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eosio_docker/scripts/init_blockchain.sh" beforeDir="false" afterPath="$PROJECT_DIR$/eosio_docker/scripts/init_blockchain.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/contracts.js.test" beforeDir="false" afterPath="$PROJECT_DIR$/tests/contracts.js.test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/yarn-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/tests/yarn-error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/tests/yarn.lock" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -24,22 +33,23 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="abi" value="2" />
-          <entry key="cpp" value="32" />
+          <entry key="cpp" value="67" />
           <entry key="gitignore" value="1" />
+          <entry key="hpp" value="1" />
           <entry key="js" value="19" />
-          <entry key="json" value="9" />
+          <entry key="json" value="23" />
           <entry key="lock" value="1" />
           <entry key="md" value="1" />
-          <entry key="sh" value="40" />
-          <entry key="test" value="22" />
+          <entry key="sh" value="81" />
+          <entry key="test" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="40" />
-          <entry key="C++" value="32" />
-          <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="40" />
+          <entry key="Bash" value="81" />
+          <entry key="C++" value="68" />
+          <entry key="JSON" value="23" />
+          <entry key="JavaScript" value="66" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="yarn.lock" value="1" />
@@ -47,21 +57,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="271" />
-          <entry key="gitignore" value="19" />
+          <entry key="cpp" value="907" />
+          <entry key="gitignore" value="38" />
+          <entry key="hpp" value="1" />
           <entry key="js" value="202" />
-          <entry key="json" value="76" />
-          <entry key="sh" value="58" />
-          <entry key="test" value="1698" />
+          <entry key="json" value="92" />
+          <entry key="sh" value="194" />
+          <entry key="test" value="2437" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="58" />
-          <entry key="C++" value="271" />
-          <entry key="JSON" value="76" />
-          <entry key="JavaScript" value="1893" />
-          <entry key="PLAIN_TEXT" value="26" />
+          <entry key="Bash" value="194" />
+          <entry key="C++" value="908" />
+          <entry key="JSON" value="92" />
+          <entry key="JavaScript" value="2632" />
+          <entry key="PLAIN_TEXT" value="45" />
         </counts>
       </usages-collector>
     </session>
@@ -69,10 +80,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/tests/contracts.js.test">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
+            <state relative-caret-position="526">
+              <caret line="108" column="19" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
+              <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -93,8 +105,11 @@
       <find>apply</find>
       <find>wallet</find>
       <find>open</find>
-      <find>deploy_contract</find>
       <find>console</find>
+      <find>deploy_contract</find>
+      <find>listed</find>
+      <find>eosio</find>
+      <find>5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/eosio_docker/scripts</dir>
@@ -108,13 +123,19 @@
       <list>
         <option value="$PROJECT_DIR$/eosio_docker/scripts/deploy_contract.sh" />
         <option value="$PROJECT_DIR$/tests/test.js" />
-        <option value="$PROJECT_DIR$/tests/package.json" />
         <option value="$PROJECT_DIR$/eosio_docker/contracts/notechain/notechain.cpp" />
         <option value="$PROJECT_DIR$/tests/cleos.js" />
-        <option value="$PROJECT_DIR$/tests/contracts.js.test" />
         <option value="$PROJECT_DIR$/eosio_docker/contracts/moverprover/mvpregister.cpp" />
-        <option value="$PROJECT_DIR$/eosio_docker/scripts/init_blockchain.sh" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/tests/package.json" />
+        <option value="$PROJECT_DIR$/eosio_docker/scripts/create_accounts.sh" />
+        <option value="$PROJECT_DIR$/eosio_docker/contracts/eosio.token/eosio.token.hpp" />
+        <option value="$PROJECT_DIR$/eosio_docker/contracts/eosio.token/eosio.token.cpp" />
+        <option value="$PROJECT_DIR$/eosio_docker/contracts/mvpmarket/mvpmarket.cpp" />
+        <option value="$PROJECT_DIR$/eosio_docker/scripts/init_blockchain.sh" />
+        <option value="$PROJECT_DIR$/eosio_docker/contracts/mvpregister/mvpregister.cpp" />
+        <option value="$PROJECT_DIR$/tests/contracts.js.test" />
       </list>
     </option>
   </component>
@@ -186,6 +207,11 @@
             </path>
             <path>
               <item name="moverprover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="moverprover" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="moverprover" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
@@ -230,12 +256,12 @@
       <option name="presentableId" value="Default" />
       <updated>1552347651602</updated>
       <workItem from="1552347653002" duration="2635000" />
-      <workItem from="1552353013276" duration="29379000" />
+      <workItem from="1552353013276" duration="49140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32014000" />
+    <option name="totallyTimeSpent" value="51775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -306,13 +332,6 @@
     <entry file="file://$PROJECT_DIR$/tests/yarn.lock">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eosio_docker/contracts/notechain/notechain.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
@@ -320,34 +339,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/first_time_setup.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eosio_docker/scripts/accounts.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/cleos.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/contracts.js.test">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eosio_docker/contracts/mvpregister/mvpregister.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -359,7 +354,62 @@
         <state relative-caret-position="-312" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eosio_docker/scripts/create_accounts.sh">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/first_time_setup.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/saved_recordings-1.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eosio_docker/contracts/eosio.token/eosio.token.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eosio_docker/contracts/eosio.token/eosio.token.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2776">
+          <caret line="170" selection-start-line="170" selection-end-line="170" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eosio_docker/contracts/mvpmarket/mvpmarket.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eosio_docker/scripts/accounts.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="91" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eosio_docker/scripts/continue_blockchain.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/eosio_docker/scripts/deploy_contract.sh">
@@ -371,15 +421,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eosio_docker/scripts/init_blockchain.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        <state relative-caret-position="244">
+          <caret line="47" column="101" selection-start-line="47" selection-start-column="101" selection-end-line="47" selection-end-column="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/eosio_docker/scripts/create_accounts.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        <state relative-caret-position="540">
+          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eosio_docker/contracts/mvpregister/mvpregister.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="831">
+          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/contracts.js.test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="108" column="19" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
+          <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
         </state>
       </provider>
     </entry>

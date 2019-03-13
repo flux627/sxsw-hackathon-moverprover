@@ -13,19 +13,81 @@ CONTRACT mvpregister : public eosio::contract {
       datastream<const char*> ds
     ): contract(receiver, code, ds) {}
 
-    ACTION reg( const name user ) {
+    ACTION reg(
+      const name user,
+      const std::string movename,
+      const uint64_t moveid,
+      // Not stored in table:
+      const std::string fullname,
+      const std::string email
+    ) {
       require_auth( user );
+      move_index moves(_code, _code.value);
+      moves.emplace(user, [&]( auto& row ) {
+        row.moveowner = user;
+        row.movename = movename;
+        row.moveid = moveid;
+        row.islisted = false;
+        row.buyamount = 0;
+      });
+    }
+
+    ACTION list(
+      const name user,
+      const uint64_t moveid,
+      const uint64_t buyamount
+    ) {
+      require_auth( user );
+      move_index moves(_code, _code.value);
+      auto iterator = moves.find(moveid);
+      eosio_assert(iterator != moves.end(), "Record does not exist");
+      moves.modify(iterator, user, [&]( auto& row ) {
+        row.buyamount = buyamount;
+        row.islisted = true;
+      });
+    }
+
+//  ACTION buy(
+//    const name user,
+//    const uint64_t moveid
+//  ) {
+//    require_auth( user );
+//    move_index moves(_code, _code.value);
+//    auto iterator = moves.find(moveid);
+//    eosio_assert(iterator != moves.end(), "Record does not exist");
+//    moves.modify(iterator, user, [&]( auto& row ) {
+//      row.buyamount = 0;
+//      row.islisted = false;
+//      row.moveowner = user;
+//    });
+//  }
+    ACTION buy(
+      const name user,
+      const uint64_t moveid
+    ) {
+      require_auth( user );
+      move_index moves(_code, _code.value);
+      auto iterator = moves.find(moveid);
+      eosio_assert(iterator != moves.end(), "Record does not exist");
+      moves.modify(iterator, user, [&]( auto& row ) {
+        row.moveowner = user;
+        row.islisted = false;
+        row.buyamount = 0;
+      });
     }
 
   private:
     TABLE move {
-      uint128_t prim_key;
-      name owner;
+      name moveowner;
+      std::string movename;
+      uint64_t moveid;
+      bool islisted;
+      uint64_t buyamount;
 
-      uint128_t primary_key() const { return prim_key;}
+      uint64_t primary_key() const { return moveid; }
     };
 
     typedef eosio::multi_index<"moves"_n, move> move_index;
 };
 
-EOSIO_DISPATCH( mvpregister, (reg) )
+EOSIO_DISPATCH( mvpregister, (reg)(list)(buy) )

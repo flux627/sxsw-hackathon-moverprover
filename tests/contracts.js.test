@@ -1,5 +1,9 @@
 const { Cleos, cmdPromisified } = require('./cleos')
-const stripAnsi = require('strip-ansi');
+const stripAnsi = require('strip-ansi')
+const fs = require('fs')
+const crypto = require('crypto')
+const bigInt = require("big-integer")
+const biformat = require('biguint-format')
 
 const CLEOS_PATH = 'docker exec -i eosio_notechain_container /usr/bin/cleos'
 const PASS_CMD = 'docker exec -i eosio_notechain_container /bin/cat /opt/eosio/bin/notechain_wallet_password.txt'
@@ -35,14 +39,81 @@ describe('mvpregister Contract', () => {
   })
 
   it('can register a move', async () => {
-    const contractArgs = [
-      "useraaaaaaaa" // user
+    const moveId = bigInt(biformat(crypto.randomBytes(8), 'dec'))
+    const registerArgs = [
+      'useraaaaaaaa', // user
+      'my move 1', // movename
+      moveId, // id
+      'Julien Heller', // fullname
+      'julienheller627@gmail.com' // email
     ]
     const result = await cleos.push.action.mvpregister.reg(
-      JSON.stringify(contractArgs),
-      { permission: "useraaaaaaaa@active" },
+      JSON.stringify(registerArgs),
+      { permission: 'useraaaaaaaa@active' },
     )
-    console.log("result:", result)
-    expect(result).toBe("blah")
+    expect(result.startsWith('#   mvpregister <= mvpregister::reg             {"user":"useraaaaaaaa","movename":"my move","id":"')).toBe(true)
+  })
+
+  it('can list a registered move', async () => {
+    const moveId = bigInt(biformat(crypto.randomBytes(8), 'dec'))
+    const registerArgs = [
+      'useraaaaaaaa', // user
+      'my move 2', // movename
+      moveId, // moveid
+      'Julien Heller',
+      'julienheller627@gmail.com'
+    ]
+    await cleos.push.action.mvpregister.reg(
+      JSON.stringify(registerArgs),
+      { permission: 'useraaaaaaaa@active' },
+    )
+
+    const listArgs = [
+      'useraaaaaaaa', // user
+      moveId, // moveid
+      1000, // buyamount
+    ]
+    const result = await cleos.push.action.mvpregister.list(
+      JSON.stringify(listArgs),
+      { permission: 'useraaaaaaaa@active' },
+    )
+
+    expect(result.startsWith('asdf')).toBe(true)
+  })
+
+  it('can buy a registered move', async () => {
+    const moveId = bigInt(biformat(crypto.randomBytes(8), 'dec'))
+    const registerArgs = [
+      'useraaaaaaaa', // user
+      'my move 3', // movename
+      moveId, // moveid
+      'Julien Heller',
+      'julienheller627@gmail.com'
+    ]
+    await cleos.push.action.mvpregister.reg(
+      JSON.stringify(registerArgs),
+      { permission: 'useraaaaaaaa@active' },
+    )
+
+    const listArgs = [
+      'useraaaaaaaa', // user
+      moveId, // moveid
+      1000, // buyamount
+    ]
+    await cleos.push.action.mvpregister.list(
+      JSON.stringify(listArgs),
+      { permission: 'useraaaaaaaa@active' },
+    )
+
+    const buyArgs = [
+      'useraaaaaaab', // user
+      moveId, // moveid
+    ]
+    const result = await cleos.push.action.mvpregister.buy(
+      JSON.stringify(buyArgs),
+      { permission: 'useraaaaaaab@active' }
+    )
+    expect(result).toBe("asdf")
+
   })
 })
