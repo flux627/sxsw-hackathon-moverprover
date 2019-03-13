@@ -1,0 +1,50 @@
+Arguments: 
+  /usr/local/Cellar/node/11.6.0/bin/node /usr/local/Cellar/yarn/1.13.0/libexec/bin/yarn.js
+
+PATH: 
+  /anaconda3/bin:/Users/julienheller/.yarn/bin:/Users/julien/perl5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  11.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/julienheller/projects/moverprover/tests/package.json: Unexpected token } in JSON at position 134
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "tests",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+      "jest": "^24.4.0",
+  
+    },
+    "jest": {
+      "moduleFileExtensions": [
+        "js"
+      ],
+      "transform": {
+        "^.+\\.tsx?$": "ts-jest"
+      },
+      "testRegex": "^.*\\.js$",
+      "testEnvironment": "node"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

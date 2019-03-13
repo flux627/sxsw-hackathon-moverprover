@@ -1,0 +1,48 @@
+const { Cleos, cmdPromisified } = require('./cleos')
+const stripAnsi = require('strip-ansi');
+
+const CLEOS_PATH = 'docker exec -i eosio_notechain_container /usr/bin/cleos'
+const PASS_CMD = 'docker exec -i eosio_notechain_container /bin/cat /opt/eosio/bin/notechain_wallet_password.txt'
+
+const cleos = new Cleos(CLEOS_PATH)
+
+describe('cleos functions', () => {
+  it('unlocks wallet', async () => {
+    const password = await cmdPromisified(PASS_CMD)
+    let output
+    try {
+      output = await cleos.wallet.unlock({ name: 'notechainwal', password })
+    } catch (err) {
+      const cleosError = stripAnsi(err.message.split("\n")[2])
+      return expect(cleosError).toBe("Error 3120007: Already unlocked")
+    }
+    expect(output).toBe("Unlocked: notechainwal\n")
+  })
+})
+
+describe('mvpregister Contract', () => {
+  beforeAll(async () => {
+    try {
+      await cleos.wallet.unlock({ name: 'notechainwal', password })
+    } catch (err) {
+      console.log("Wallet already open.")
+    }
+  })
+
+  it('exists', async () => {
+    const result = JSON.parse(await cleos.get.account('mvpregister', '-j'))
+    expect(result.account_name).toBe('mvpregister')
+  })
+
+  it('can register a move', async () => {
+    const contractArgs = [
+      "useraaaaaaaa" // user
+    ]
+    const result = await cleos.push.action.mvpregister.reg(
+      JSON.stringify(contractArgs),
+      { permission: "useraaaaaaaa@active" },
+    )
+    console.log("result:", result)
+    expect(result).toBe("blah")
+  })
+})
