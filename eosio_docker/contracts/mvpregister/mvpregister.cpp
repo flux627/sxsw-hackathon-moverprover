@@ -28,39 +28,25 @@ CONTRACT mvpregister : public eosio::contract {
         row.movename = movename;
         row.moveid = moveid;
         row.islisted = false;
-        row.buyamount = 0;
+        row.buyprice = 0;
       });
     }
 
     ACTION list(
       const name user,
       const uint64_t moveid,
-      const uint64_t buyamount
+      const uint64_t buyprice
     ) {
       require_auth( user );
       move_index moves(_code, _code.value);
       auto iterator = moves.find(moveid);
       eosio_assert(iterator != moves.end(), "Record does not exist");
       moves.modify(iterator, user, [&]( auto& row ) {
-        row.buyamount = buyamount;
+        row.buyprice = buyprice;
         row.islisted = true;
       });
     }
 
-//  ACTION buy(
-//    const name user,
-//    const uint64_t moveid
-//  ) {
-//    require_auth( user );
-//    move_index moves(_code, _code.value);
-//    auto iterator = moves.find(moveid);
-//    eosio_assert(iterator != moves.end(), "Record does not exist");
-//    moves.modify(iterator, user, [&]( auto& row ) {
-//      row.buyamount = 0;
-//      row.islisted = false;
-//      row.moveowner = user;
-//    });
-//  }
     ACTION buy(
       const name user,
       const uint64_t moveid
@@ -72,7 +58,7 @@ CONTRACT mvpregister : public eosio::contract {
       moves.modify(iterator, user, [&]( auto& row ) {
         row.moveowner = user;
         row.islisted = false;
-        row.buyamount = 0;
+        row.buyprice = 0;
       });
     }
 
@@ -82,7 +68,7 @@ CONTRACT mvpregister : public eosio::contract {
       std::string movename;
       uint64_t moveid;
       bool islisted;
-      uint64_t buyamount;
+      uint64_t buyprice;
 
       uint64_t primary_key() const { return moveid; }
     };
